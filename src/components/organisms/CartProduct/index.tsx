@@ -57,7 +57,6 @@ const CartProduct = ({
       <Flex>
         <Box width="120px" height="120px">
           <Link href={`/products/${id}`} passHref>
-
             <Image
               quality="85"
               src={imageUrl}
@@ -66,7 +65,6 @@ const CartProduct = ({
               width={120}
               objectFit="cover"
             />
-
           </Link>
         </Box>
         <Box padding={1}>
@@ -121,7 +119,7 @@ const CartProduct = ({
         </RemoveText>
       </Box>
     </Flex>
-  );
+  )
 }
 
 export default CartProduct

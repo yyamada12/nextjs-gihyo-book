@@ -128,7 +128,7 @@ const Header = () => {
                       />
                     </Anchor>
                   </Link>
-                );
+                )
               } else if (isLoading) {
                 // ロード中はスピナーを表示
                 return <Spinner size={20} strokeWidth={2} />
@@ -140,7 +140,7 @@ const Header = () => {
                       <PersonIcon size={24} />
                     </Anchor>
                   </Link>
-                );
+                )
               }
             })()}
           </NavLink>
@@ -152,7 +152,7 @@ const Header = () => {
         </Nav>
       </Flex>
     </HeaderRoot>
-  );
+  )
 }
 
 export default Header

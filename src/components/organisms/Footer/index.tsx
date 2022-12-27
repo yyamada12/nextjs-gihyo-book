@@ -79,7 +79,7 @@ const Footer = () => {
         <Text>© 2021 Gijutsuhyoronsha Co., Ltd.. All rights reserved.</Text>
       </Box>
     </footer>
-  );
+  )
 }
 
 export default Footer
