@@ -1,4 +1,3 @@
-import ProductCardListContainer from 'containers/ProductCardListContainer'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -10,6 +9,7 @@ import Flex from 'components/layout/Flex'
 import Breadcrumb from 'components/molecules/Breadcrumb'
 import FilterGroup from 'components/molecules/FilterGroup'
 import Layout from 'components/templates/Layout'
+import ProductCardListContainer from 'containers/ProductCardListContainer'
 import type { Category, Condition } from 'types'
 
 const Anchor = styled(Text)`
@@ -69,20 +69,19 @@ const SearchPage: NextPage = () => {
         <Box marginBottom={1}>
           <Breadcrumb>
             <BreadcrumbItem>
-              <Link href="/">
-                <a>トップ</a>
-              </Link>
+              <Link href="/">トップ</Link>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <Link href="/search">
-                <a>検索</a>
-              </Link>
+              <Link href="/search">検索</Link>
             </BreadcrumbItem>
             {/* パンくずリストを選択したカテゴリから生成 */}
             {slug.slice(0, slug.length - 1).map((category, i) => (
               <BreadcrumbItem key={i}>
-                <Link href={`/search/${slug.slice(0, i + 1).join('/')}`}>
-                  <a>{categoryNameDict[category] ?? 'Unknown'}</a>
+                <Link
+                  href={`/search/${slug.slice(0, i + 1).join('/')}`}
+                  legacyBehavior
+                >
+                  {categoryNameDict[category] ?? 'Unknown'}
                 </Link>
               </BreadcrumbItem>
             ))}
@@ -112,7 +111,7 @@ const SearchPage: NextPage = () => {
                   カテゴリ
                 </Text>
                 <Box>
-                  <Link href="/search/" passHref>
+                  <Link href="/search/" passHref legacyBehavior>
                     <Anchor as="a">すべて</Anchor>
                   </Link>
                 </Box>
@@ -120,7 +119,11 @@ const SearchPage: NextPage = () => {
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
                     <Box key={i} marginTop={1}>
-                      <Link href={`/search/${category}`} passHref>
+                      <Link
+                        href={`/search/${category}`}
+                        passHref
+                        legacyBehavior
+                      >
                         <Anchor as="a">
                           {categoryNameDict[category as Category]}
                         </Anchor>
