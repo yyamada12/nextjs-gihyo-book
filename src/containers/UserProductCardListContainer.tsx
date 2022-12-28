@@ -38,7 +38,6 @@ const UserProductCardListContainer = ({
       {userProducts.map((p) => (
         <Fragment key={p.id}>
           <Link href={`/products/${p.id}`} passHref>
-
             {/* 商品カード */}
             <ProductCard
               variant="small"
@@ -46,12 +45,11 @@ const UserProductCardListContainer = ({
               price={p.price}
               imageUrl={p.imageUrl}
             />
-
           </Link>
         </Fragment>
       ))}
     </ProductCardList>
-  );
+  )
 }
 
 export default UserProductCardListContainer

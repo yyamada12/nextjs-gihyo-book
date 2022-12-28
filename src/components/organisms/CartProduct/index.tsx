@@ -119,7 +119,7 @@ const CartProduct = ({
         </RemoveText>
       </Box>
     </Flex>
-  );
+  )
 }
 
 export default CartProduct
