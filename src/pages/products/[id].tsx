@@ -72,7 +72,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
               <Link href="/search">検索</Link>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <Link href={`/search/${product.category}`}>
+              <Link href={`/search/${product.category}`} legacyBehavior>
                 {categoryNameDict[product.category as Category]}
               </Link>
             </BreadcrumbItem>
@@ -91,7 +91,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             <Text as="h2" variant="large" marginTop={0}>
               出品者
             </Text>
-            <Link href={`/users/${product.owner.id}`}>
+            <Link href={`/users/${product.owner.id}`} legacyBehavior>
               {/* ユーザープロファイル */}
               <UserProfile
                 variant="small"
