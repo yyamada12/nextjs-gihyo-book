@@ -124,6 +124,7 @@ const Header = () => {
                         src={authUser.profileImageUrl}
                         width={24}
                         height={24}
+                        alt="Profile Shape Image"
                         data-testid="profile-shape-image"
                       />
                     </Anchor>
